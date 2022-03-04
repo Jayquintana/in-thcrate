@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
 import { getArtists } from '../api/discogsApi';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Artists from '../Artists/Artists';
 
 
 class App extends Component {
@@ -15,14 +16,16 @@ class App extends Component {
 
   componentDidMount() {
     getArtists().then(data => console.log(data))
-    console.log('hello');
   }
 
 
   render() {
     return (
-      <div>
-        <LandingPage/>
+      <div className="main-section">
+        <Routes>
+          <Route path='/' element={ <LandingPage />} exact />
+          <Route path='/artists' element={<Artists />} exact />
+        </Routes>
       </div>
     )
   }
