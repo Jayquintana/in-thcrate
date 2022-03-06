@@ -22,8 +22,8 @@ class App extends Component {
   getRandomArtist() {
     let artistAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15]
     let artistId = artistAmount.map((num) => {
-      let radomNumber = Math.random() * (300 - num) + num;
-      return Math.round(radomNumber)
+      let randomNumber = Math.random() * (300 - num) + num;
+      return Math.round(randomNumber)
     })
 
     let fetchArtists = artistId.map((id) => {
