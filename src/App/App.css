@@ -19,6 +19,10 @@ time, mark, audio, button, input, video {
 	vertical-align: baseline;
 }
 
+body, html{
+	height: 100vh;
+}
+
 .main-section {
   height: 100vh;
 }
