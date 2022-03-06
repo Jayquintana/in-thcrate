@@ -9,19 +9,10 @@ const Nav = ({}) => {
 
   return (
     <nav>
-      <NavLink className='logo-button-link' to={`/`}>
-        <button className='logo-button'><img className='logo-img' src={logo} alt='Logo' /></button>
+      <NavLink className='header-title' to={`/`}>
+      <h1 >In The Crate</h1>
       </NavLink>
-      <h1 className='header-title'>In The Crate</h1>
-      <button className='refresh-img'  >refresh</button>
-      <div className="search">
-        <div className="search-container">
-          <div className="searchInputWrapper">
-            <input className="searchInput" type="text" placeholder='search movies'>
-            </input>
-          </div>
-        </div>
-      </div>
+      <button onClick={() => window.location.reload()} className="glow-on-hover" type="button">Generate New Artists</button>
     </nav>
   )
 }
