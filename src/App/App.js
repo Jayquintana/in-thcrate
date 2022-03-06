@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
-import { getArtists } from '../api/discogsApi';
-import { Route } from 'react-router-dom';
+import { getArtists} from '../api/discogsApi';
+import { Route, Routes } from 'react-router-dom';
+import Artists from '../Artists/Artists';
 
 
 class App extends Component {
@@ -14,15 +15,41 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getArtists().then(data => console.log(data))
-    console.log('hello');
+    this.getRandomArtist()
   }
 
 
+  getRandomArtist() {
+    let artistAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15]
+    let artistId = artistAmount.map((num) => {
+      let radomNumber = Math.random() * (300 - num) + num;
+      return Math.round(radomNumber)
+    })
+
+    let fetchArtists = artistId.map((id) => {
+      return getArtists(id).then((data) => {
+        if (data.images.length) {
+          return this.setState(state => state.artists.push(data))
+        } else {
+          console.log('no image');
+        }
+      })
+        .catch((error) => {
+          console.log(error)
+        });
+    })
+    
+  }
+
+  
+
   render() {
     return (
-      <div>
-        <LandingPage/>
+      <div className="main-section">
+        <Routes>
+          <Route path='/' element={<LandingPage artistIds={this.state.artistIds} fetchArtists={this.fetchArtists} />} exact />
+          <Route path='/artists' element={<Artists artists={this.state.artists} />} exact />
+        </Routes>
       </div>
     )
   }
