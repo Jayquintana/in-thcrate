@@ -16,7 +16,7 @@ const App = () =>  {
     getRandomArtist()
   }, []);
 
-  const getRandomArtist= () => {
+  const getRandomArtist = () => {
     let artistAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15]
     let artistId = artistAmount.map((num) => {
       let randomNumber = Math.random() * (300 - num) + num;
@@ -36,17 +36,6 @@ const App = () =>  {
             console.log(error)
           });
       })
-  }
-
-  const checkCategory = (input) => {
-    console.log('hello');
-    const findArtist = this.state.artists.find(artist => artist.id === input)
-    console.log(findArtist);
-    if (findArtist) {
-      return (<ArtistDetails />)
-    } else {
-      console.log('hello');
-    }
   }
 
     return (

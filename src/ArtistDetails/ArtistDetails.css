@@ -45,22 +45,17 @@
   text-decoration: none;
 }
 
-.terminal {
-  font-family: monospace;
-  background: #161b22;
+.artist-description {
   display: flex;
-  align-items: center;
-  padding-left: 1em;
-  padding-right: 1em;
-  border-radius: 6px;
-}
-
-.output {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.4em;
-  justify-content: flex-start;
-  align-items: flex-start;
+    flex-direction: column;
+    line-height: 1.4em;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+    font-family: monospace;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: #161b22;
 }
 
 .artist-img {

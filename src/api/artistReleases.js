@@ -1,6 +1,6 @@
-const getArtists = async (artistsId) => {
+const getReleases = async (release) => {
 
-  return fetch(`https://api.discogs.com/artists/${artistsId}?key=QaxrqhMkbuCukhWNmnUq&secret=nWRmusdJoUlFqzzXLpbKhMtsGOlGEGGe`)
+  return fetch(`${release}`)
     .then(response => {
       if (!response.ok) {
         if (response.status >= 500) {
@@ -18,4 +18,4 @@ const getArtists = async (artistsId) => {
 
 
 
-export { getArtists}
+export { getReleases }
