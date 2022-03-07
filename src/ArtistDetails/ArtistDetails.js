@@ -20,9 +20,16 @@ const params = useParams()
 const getArtitRelease = () => {
   console.log(artist.releases_url);
   getReleases(artist.releases_url).then((data) => {
-    console.log(data);
+    setRelease(data.releases)
   })
     .catch(error => console.log(error))
+}
+
+const displayReleases = () => {
+  let result = releases.map((release) => {
+    return (<p className="white">{release.title}<p></p></p> )
+  })
+  return result
 }
 
   return (
@@ -31,10 +38,11 @@ const getArtitRelease = () => {
       <div className="container">
         <img src={`${artist.images[0].uri}`} alt="Profile picture" className="artist-img"/>
           <div className="artist-description">
-            <span className="purple">{`${artist.name}`}</span>
+            <p className="purple">{`${artist.name}`}</p>
             <span className="red">-----------------</span>
-            <span className="purple about">About:</span> {`${artist.profile}`}
-          <span className="purple">Releases</span>: none
+            <p className="purple about">About:</p> {`${artist.profile}`}
+            <p className="purple releases">Releases: <p className='white'> {releases.length}</p></p> 
+            {displayReleases()}
           </div>
       </div>
     </section>
