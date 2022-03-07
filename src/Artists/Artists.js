@@ -23,8 +23,12 @@ const Artists = ({ artists, grabArtist}) => {
 
   return (
     <div className="artist-page">
-      < ArtistNav />
-      {artistCards}
+      <div className='nav-box'>
+        < ArtistNav />
+      </div>
+      <div className='artist-box'>
+        {artistCards}
+      </div>
     </div>
   )
 }

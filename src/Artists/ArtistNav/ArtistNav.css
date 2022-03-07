@@ -1,12 +1,10 @@
 nav {
-  z-index: 1000;
   display: flex;
-  justify-content: space-around;
-  position: fixed;
-  top: 0;
-  width: 40%;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
   margin-top: 1%;
-  align-self: center;
   border: 1px solid rgb(233, 185, 255, .8);
 }
 
@@ -16,26 +14,11 @@ nav {
   margin-top: .5%;
   margin-left: 5%;
   width: 50%;
-  font-size: 40px;
+  font-size: 2em;
   color: rgb(233, 185, 255);
   text-decoration: none;
 }
 
-
-.logo-button-link {
-  width: 6%;
-}
-
-.logo-img,
-.logo-button {
-    margin-top: 5%;
-    width: 4vw;
-    height: 7vh;
-    background: transparent;
-    border: none;
-}
-
-.logo-img:hover {
-  background-color: rgb(233, 185, 255) ;
-  cursor: pointer;
+.nav-title {
+  position: relative;
 }
