@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ArtistsTile from './ArtistTile/ArtistsTile';
 import ArtistNav from './ArtistNav/ArtistNav'
 
-const Artists = ({artists}) => {
+const Artists = ({ artists, grabArtist}) => {
 
   const artistCards = artists.map(artist => {
     return (
@@ -13,6 +13,7 @@ const Artists = ({artists}) => {
         artistImage={artist.images}
         key={artist.id}
         id={artist.id}
+        grabArtist={grabArtist}
       />
     ) 
 

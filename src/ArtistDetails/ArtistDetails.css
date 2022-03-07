@@ -1,0 +1,48 @@
+.artist-profile {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #0d1117;
+}
+
+.container {
+  display: flex;
+  color: #fafafa;
+  gap: 1em;
+  white-space: pre-line;
+}
+
+.about {
+  width: 20%;
+  overflow-wrap: break-word;
+}
+
+.terminal {
+  font-family: monospace;
+  background: #161b22;
+  display: flex;
+  align-items: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 6px;
+}
+
+.output {
+  grid-area: output;
+  line-height: 1.4em;
+  display: block;
+}
+
+.artist-img {
+  width: 280px;
+  grid-area: img;
+}
+
+.purple {
+  color: #d2a8ff;
+}
+
+.red {
+  color: #ff7b72;
+}

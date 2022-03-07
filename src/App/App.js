@@ -5,19 +5,21 @@ import { getArtists} from '../api/discogsApi';
 import { Route, Routes } from 'react-router-dom';
 import Artists from '../Artists/Artists';
 import ArtistDetails from '../ArtistDetails/ArtistDetails'
+import {useParams} from 'react-router-dom'
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      artists: []
+      artists: [],
+      artistId: []
     }
   }
 
   componentDidMount() {
     this.getRandomArtist()
   }
-
 
   getRandomArtist() {
     let artistAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15]
@@ -30,39 +32,43 @@ class App extends Component {
       return getArtists(id).then((data) => {
         if (data.images.length) {
           return this.setState(state => state.artists.push(data))
-        } else {
+        } 
+        else {
           console.log('no image');
         }
+        })
+          .catch((error) => {
+            console.log(error)
+          });
       })
-        .catch((error) => {
-          console.log(error)
-        });
-    })
-    
   }
 
-  
+  checkCategory = (input) => {
+    console.log('hello');
+    const findArtist = this.state.artists.find(artist => artist.id === input)
+    console.log(findArtist);
+    if (findArtist) {
+      return (<ArtistDetails />)
+    } else {
+      console.log('hello');
+    }
+  }
+
+
+
 
   render() {
     return (
       <div className="main-section">
         <Routes>
-          <Route path='/' element={<LandingPage artistIds={this.state.artistIds} fetchArtists={this.fetchArtists} />} exact />
-          <Route path='/artists' element={<Artists artists={this.state.artists} />} exact />
-          <Route exact path='/artists/:id' render={({ match }) => {
+          <Route  exact path='/' element={<LandingPage  />}  />
+          <Route exact path='/artists' element={<Artists artists={this.state.artists} />}  />
+          {/* <Route  path='/artists/:id' render={({ match }) => {
             const findArtist = this.state.artists.find(artist => artist.id === parseInt(match.params.id))
-            if (findArtist) {
-              return (
-                <ArtistDetails name={findArtist.name} image={findArtist.images[0].uri} about={findArtist.p} id={match.params.id} />
-              )
-            } 
-            // else if (findMovie === undefined) {
-            //   return (
-            //     <LolNotFound />
-            //   )
-            // }
-          }}
-          />
+            this.setState(state => state.artistId.push(findArtist))
+          }} element={<ArtistDetails match={this.state.artistId} />}
+          /> */}
+          {/* <Route path='/artists/:id' render={({props}) => {console.log(props)}} element={<ArtistDetails match={this.props} />} />   */}
         </Routes>
       </div>
     )
