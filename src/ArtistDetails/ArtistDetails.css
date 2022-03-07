@@ -1,21 +1,48 @@
 .artist-profile {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   background: #0d1117;
 }
 
-.container {
-  display: flex;
-  color: #fafafa;
-  gap: 1em;
-  white-space: pre-line;
+.back-to-artists {
+  border: 1px solid #fff;
+  padding: 10px 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  width: 20%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: #fff;
+  margin-left: 10%;
+}
+
+.back-to-artists:hover{
+    background-color: white;
+    color: rgba(68, 25, 109, 0.623);
+    font-weight: bold;
 }
 
 .about {
-  width: 20%;
-  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.container {
+  display: flex;
+  color: #fafafa;
+  width: 70%;
+  height: 50%;
+  gap: 1em;
+  white-space: pre-line;
+  align-self: center;
+  margin-top: 3%;
+}
+
+.back {
+  text-decoration: none;
 }
 
 .terminal {
@@ -29,9 +56,11 @@
 }
 
 .output {
-  grid-area: output;
+  display: flex;
+  flex-direction: column;
   line-height: 1.4em;
-  display: block;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .artist-img {

@@ -15,7 +15,6 @@ const ArtistsTile = ({ name, artistImage, id}) => {
       </div>
       <div className="card-content">
         <h4>{name}</h4>
-        <p>Hip Hop</p>
       </div>
     </div>
     </Link >

@@ -8,7 +8,7 @@ const LandingPage = ({fetchArtists}) => {
       <div className="landing-titles">
         <h1>In The Crate</h1>
         <p>A shopping list for your vinyl addiction. View a list of random artists and their music, see if you like them and save it for later when you go record shopping. That simple. </p>
-        <Link onClick={fetchArtists} className='enter-site' to={`/artists`}>Enter Site</Link>
+        <Link className='enter-site' to={`/artists`}>Enter Site</Link>
       </div>
     </div>
   )
