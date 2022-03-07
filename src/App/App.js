@@ -4,7 +4,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import { getArtists} from '../api/discogsApi';
 import { Route, Routes } from 'react-router-dom';
 import Artists from '../Artists/Artists';
-
+import ArtistDetails from '../ArtistDetails/ArtistDetails'
 
 class App extends Component {
   constructor() {
@@ -49,6 +49,20 @@ class App extends Component {
         <Routes>
           <Route path='/' element={<LandingPage artistIds={this.state.artistIds} fetchArtists={this.fetchArtists} />} exact />
           <Route path='/artists' element={<Artists artists={this.state.artists} />} exact />
+          <Route exact path='/artists/:id' render={({ match }) => {
+            const findArtist = this.state.artists.find(artist => artist.id === parseInt(match.params.id))
+            if (findArtist) {
+              return (
+                <ArtistDetails name={findArtist.name} image={findArtist.images[0].uri} about={findArtist.p} id={match.params.id} />
+              )
+            } 
+            // else if (findMovie === undefined) {
+            //   return (
+            //     <LolNotFound />
+            //   )
+            // }
+          }}
+          />
         </Routes>
       </div>
     )

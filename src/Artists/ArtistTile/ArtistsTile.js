@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const ArtistsTile = ({ name, artistImage, id}) => {
   return (
-    <div className="card" id={`${id}`}>
+    <Link className="card" to={`/artists/${id}`}>
+    <div  id={`${id}`}>
       <div className="cover">
         <img src={`${artistImage[0].uri}`} alt="cover" />
         <div className="play-icon">
@@ -16,6 +17,7 @@ const ArtistsTile = ({ name, artistImage, id}) => {
         <p>Hip Hop</p>
       </div>
     </div>
+    </Link >
   )
 }
 
