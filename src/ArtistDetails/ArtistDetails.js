@@ -27,7 +27,7 @@ const getArtitRelease = () => {
 
 const displayReleases = () => {
   let result = releases.map((release) => {
-    return (<p className="white">{release.title}<p></p></p> )
+    return (<p className="white">{release.title}</p> )
   })
   return result
 }
@@ -41,7 +41,7 @@ const displayReleases = () => {
             <p className="purple">{`${artist.name}`}</p>
             <span className="red">-----------------</span>
             <p className="purple about">About:</p> {`${artist.profile}`}
-            <p className="purple releases">Releases: <p className='white'> {releases.length}</p></p> 
+            <h1 className="purple releases">Releases: <p className='white'> {releases.length}</p></h1> 
             {displayReleases()}
           </div>
       </div>
