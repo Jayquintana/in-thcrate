@@ -7,7 +7,7 @@ import Artists from '../Artists/Artists';
 import ArtistDetails from '../ArtistDetails/ArtistDetails'
 import {useParams} from 'react-router-dom'
 import { useState, useEffect } from 'react'
-
+import { getReleases } from '../api/artistReleases';
 
 const App = () =>  {
     const [artists, setArtists] = useState([])
@@ -19,7 +19,7 @@ const App = () =>  {
   const getRandomArtist = () => {
     let artistAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15]
     let artistId = artistAmount.map((num) => {
-      let randomNumber = Math.random() * (300 - num) + num;
+      let randomNumber = Math.random() * (500 - num) + num;
       return Math.round(randomNumber)
     })
 
