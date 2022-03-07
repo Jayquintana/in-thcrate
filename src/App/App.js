@@ -1,57 +1,62 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
 import { getArtists} from '../api/discogsApi';
 import { Route, Routes } from 'react-router-dom';
 import Artists from '../Artists/Artists';
+import ArtistDetails from '../ArtistDetails/ArtistDetails'
+import {useParams} from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      artists: []
-    }
-  }
+const App = () =>  {
+    const [artists, setArtists] = useState([])
 
-  componentDidMount() {
-    this.getRandomArtist()
-  }
+  useEffect(() => {
+    getRandomArtist()
+  }, []);
 
-
-  getRandomArtist() {
+  const getRandomArtist= () => {
     let artistAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15]
     let artistId = artistAmount.map((num) => {
-      let radomNumber = Math.random() * (300 - num) + num;
-      return Math.round(radomNumber)
+      let randomNumber = Math.random() * (300 - num) + num;
+      return Math.round(randomNumber)
     })
 
     let fetchArtists = artistId.map((id) => {
       return getArtists(id).then((data) => {
         if (data.images.length) {
-          return this.setState(state => state.artists.push(data))
-        } else {
+          return setArtists(arr => [...arr, data])
+        } 
+        else {
           console.log('no image');
         }
+        })
+          .catch((error) => {
+            console.log(error)
+          });
       })
-        .catch((error) => {
-          console.log(error)
-        });
-    })
-    
   }
 
-  
+  const checkCategory = (input) => {
+    console.log('hello');
+    const findArtist = this.state.artists.find(artist => artist.id === input)
+    console.log(findArtist);
+    if (findArtist) {
+      return (<ArtistDetails />)
+    } else {
+      console.log('hello');
+    }
+  }
 
-  render() {
     return (
       <div className="main-section">
         <Routes>
-          <Route path='/' element={<LandingPage artistIds={this.state.artistIds} fetchArtists={this.fetchArtists} />} exact />
-          <Route path='/artists' element={<Artists artists={this.state.artists} />} exact />
+          <Route  exact path='/' element={<LandingPage  />}  />
+          <Route exact path='/artists' element={<Artists artists={artists} />}  />
+          <Route path='/artists/:id' element={<ArtistDetails artists={artists} />} />  
         </Routes>
       </div>
     )
   }
-}
 export default App;
