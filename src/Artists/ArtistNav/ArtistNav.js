@@ -1,6 +1,4 @@
 import React from 'react'
-import logo from '/Users/jayp/Desktop/turing/mod3/projects/in-the-crate/src/vinyls.png'
-import refresh from '/Users/jayp/Desktop/turing/mod3/projects/in-the-crate/src/sync.png'
 import './ArtistNav.css'
 import { Link } from 'react-router-dom';
 
