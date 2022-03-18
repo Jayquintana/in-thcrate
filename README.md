@@ -4,8 +4,8 @@
 A discovery for new music artists! This site is powered by the Discogs public api with access to an abundance of artists. It generates a list of new artists for you to discover and expand your musical pallet!
 
 ### Try It Out
-[Our website](in-the-crate.vercel.app)
-[Here](in-the-crate.vercel.app)
+[Our website](https://in-the-crate.vercel.app/)
+
 
 <img width="1439" alt="Screen Shot 2022-03-07 at 6 03 31 AM" src="https://user-images.githubusercontent.com/76888600/157039989-ecd11752-4df1-4026-9a1e-251d1281b4a4.png">
 <img width="1407" alt="Screen Shot 2022-03-07 at 6 03 39 AM" src="https://user-images.githubusercontent.com/76888600/157040004-8802138e-13da-48be-b670-dda71b2ce36e.png">
