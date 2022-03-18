@@ -27,7 +27,7 @@ React | CSS | Cypress | discogs Api
 
 ## Getting Started
 1) Clown down this repo 
-2) Then ```cd``` into ```Rancid_Tomatillos```
+2) Then ```cd``` into repo
 3) Run ```npm install```
 4) Run ```npm start```
 
