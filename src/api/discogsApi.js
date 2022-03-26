@@ -1,6 +1,6 @@
 const getArtists = async (artistsId) => {
 
-  return fetch(`https://api.discogs.com/artists/${artistsId}?key=QaxrqhMkbuCukhWNmnUq&secret=nWRmusdJoUlFqzzXLpbKhMtsGOlGEGGe`)
+  return fetch(`https://api.discogs.com/artists/${artistsId}?key=sREoDobrApthElmLhCgq&secret=gcHxqrvVqXaOXnSaiZdUIXElhWvArlPR`)
     .then(response => {
       if (!response.ok) {
         if (response.status >= 500) {
