@@ -3,9 +3,6 @@
 [Summary](#summary) |
 [Tech Used](#tech-used) |
 [Getting Started](#getting-started) |
-[preview](#preview) |
-[Reflection](#reflection)|
-[Contributors](#contributors) | 
 
 ### Summary 
 A discovery for new music artists! This site is powered by the Discogs public api with access to an abundance of artists. It generates a list of new artists for you to discover and expand your musical pallet!
